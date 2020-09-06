@@ -3,6 +3,7 @@ library(data.table)
 library(tibble)
 
 #Read files
+#VMMG.csv file contains gene names in row and sample name in column. Each value can include multiple alterations separated by ;. To include no coverage for a gene in a sample value "low" is used.
 mat <-  fread(file = "VMMG.csv",sep = ",",header = T, stringsAsFactors = F,data.table = F)
 mat = as.matrix(column_to_rownames(mat, var = "V1"))
 

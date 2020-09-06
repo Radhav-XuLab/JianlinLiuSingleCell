@@ -3,19 +3,20 @@ library(data.table)
 library(tibble)
 
 #Read files
-mat = fread(file = "Complex oncoprint.csv",
+#Complex_oncoprint.csv file contains gene names in row and sample name in column. Each value can include multiple alterations separated by ;. To include no coverage for a gene in a sample value "low" is used.
+mat = fread(file = "Complex_oncoprint.csv",
               sep = ",",
               header = T, stringsAsFactors = F,
               data.table = F)
 mat = as.matrix(column_to_rownames(mat, var = "V1"))
-
-mat_ps = fread(file = "Pathway matrix.csv",
+#Pathway_matrix.csv file contains gene names in row and pathways in column. The status presence is indicated by 1 and absence by 0.
+mat_ps = fread(file = "Pathway_matrix.csv",
               sep = ",",
               header = T, stringsAsFactors = F,
               data.table = F)
 mat_ps = as.matrix(column_to_rownames(mat_ps, var = "V1"))
-
-mat_ds = fread(file = "Oncogene matrix.csv",
+#Oncogene_matrix.csv file containing gene name in row and oncogene status in column. The status presence is indicated by numbers 1,2,3,4,5 for ONCO,PRE-ONCO,TSG,PRE-TSG,Cancer gene census respectively and absence by 0.
+mat_ds = fread(file = "Oncogene_matrix.csv",
               sep = ",",
               header = T, stringsAsFactors = F,
                data.table = F)

@@ -3,8 +3,8 @@ library(phangorn)
 library("ggtree")
 library("colorspace")
 library(ggplot2)
-
-file <- read_excel("305.xlsx")
+#153.xls contains columnwise samples with snp information given based on presence and absence indicated by 1 and 0 respectively
+file <- read_excel("153.xlsx")
 data1 <- as.phyDat(t(file), type="USER", levels = c(0, 1))
 stree = NJ(dist.gene(t(file)))
 treeRatchet1 <- pratchet(data1, start=stree)

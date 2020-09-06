@@ -1,8 +1,8 @@
 library(deconstructSigs)
-
+#Input file contains columns for chromosome number, variant position/coordinate, reference and alternate bases.
 df_table<-read.table("all.txt", sep='\t')
 
-#Create data frame of variant lists in the long format with columns for sample name chromosome number, variant position/coordinate, reference and alternate bases.
+#Add sample name Bulk
 df<-data.frame(sample=c(rep('Bulk', times=(length(df_table$V3)))),
                chr=df_table$V1, pos=df_table$V2, ref=df_table$V3,
                alt=df_table$V4)
