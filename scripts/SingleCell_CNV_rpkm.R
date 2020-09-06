@@ -2,7 +2,8 @@ library(ComplexHeatmap)
 library(dplyr)
 library(tibble)
 library(circlize)
-#Create rpkm values first exome wise then add them genewise to get an expression matrix data for all samples
+#Create rpkm values first exome wise then add them genewise to get an expression matrix data for all samples separately 
+#Provide these files as input files 
 sample_list <- read.table("sample.list")
 sample_list <- t(sample_list)
 filename <- sample_list[,1]
