@@ -21,6 +21,6 @@ bedtools2-2.19.0/bin/coverageBed -abam ${file_bam} -b ${file_exons} > ${sampleId
 cat ${sampleId}.cov.txt | awk -v readCount="$mappedReads" '{print $1"\t"$2"\t"$3"\t"$4"\t"$5"\t",($5*10^9)/(($3-$2) * readCount)}' > ${sampleId}.exons.rpkm.txt
 
 ## Get genewise rpkm
-perl 02_exon_to_gene_rpkm.pl ${file_genes} ${sampleId}.exons.rpkm.txt >> ${sampleId}.genes.rpkm.txt
+perl 01_exon_to_gene_rpkm.pl ${file_genes} ${sampleId}.exons.rpkm.txt >> ${sampleId}.genes.rpkm.txt
 awk -v sample="$sampleId" 'BEGIN{print "chr\tstart\tend\tgene\t"sample}{print $1"\t"$2"\t"$3"\t"$4"\t"$5}' ${sampleId}.genes.rpkm.txt >> ${sampleId}.txt
 
