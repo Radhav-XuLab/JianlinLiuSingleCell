@@ -1,7 +1,7 @@
 #!/bin/bash
 
 usage="
-USAGE: This script process the BAM file and generate exon and gene level RPKM.
+USAGE: This script process the BAM file and generate exon and combined exonic genewise level RPKM.
 sh 01_bam_to_rpkm.sh <sampleId> <sample.bam> <mapped_reads> <genes.bed> <exons.bed>
 "
 
