@@ -27,7 +27,7 @@ This script uses tab separated file containing chromosome number, variant positi
 This script uses GEOquery to generate PAM50 subtyping for GSE9893.  
 
 ### 08_Fishplot.R
-This script generates fishplot to display tumor evolution.
+This script generates fishplot to display tumor evolution using different genes.
 
 
 ---
